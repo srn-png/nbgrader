@@ -26,7 +26,7 @@ class LimitOutput(NbGraderPreprocessor):
         length = 0
         new_outputs = []
         for output in cell.outputs:
-            if output.output_type == 'stream':
+            if output.output_type == 'stream' and output.name == 'stdout':
                 if length == self.max_lines:
                     continue
 
